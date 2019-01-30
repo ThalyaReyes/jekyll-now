@@ -16,27 +16,17 @@
   </head>
 
   <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+      <header class="page-header" role="banner">
+      <h1 class="project-name">{{ site.name | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+        <a href="{{ site.baseurl }}/" class="btn">Blog</a>
+        <a href="{{ site.baseurl }}/about" class="btn">About</a>
+        <a href="{{ site.baseurl }}/research" class="btn">Research</a>
+        <a href="{{ site.baseurl }}/opeds" class="btn">Daily Targum Op-Eds</a>
+</header>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
-    </div>
-
-    <div id="main" role="main" class="container">
+<main id="content" class="main-content" role="main">
       {{ content }}
-    </div>
 
     <div class="wrapper-footer">
       <div class="container">
@@ -45,7 +35,5 @@
         </footer>
       </div>
     </div>
-
-    {% include analytics.html %}
   </body>
 </html>
